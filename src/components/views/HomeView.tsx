@@ -30,17 +30,17 @@ export const HomeView: React.FC<HomeViewProps> = ({
   const handleHighlight = () => {
     setIsHighlighted(true);
     setTimeout(() => setIsHighlighted(false), 800);
-    onShowToast('تم تحديد شحنتك المباشرة الحالية');
+    onShowToast('تم تحديد شحنتك المباشرة وموضع الشاحنة الحالية');
   };
 
   return (
     <div className="flex flex-col w-full px-4 pb-28 pt-2 gap-4">
       {/* Role Switcher Pill Bar */}
-      <section className="w-full flex items-center justify-between bg-[#e5e8ef] p-1 rounded-full shadow-inner">
+      <section className="w-full flex items-center justify-between bg-[#e5e8ef] p-1.5 rounded-2xl shadow-inner border border-[#e0e2e9]">
         <button
-          className={`role-pill flex-1 py-1.5 rounded-full font-semibold text-[13px] transition-all text-center ${
+          className={`role-pill flex-1 py-2 rounded-xl font-semibold text-[13px] transition-all text-center ${
             activeRole === 'client'
-              ? 'bg-white text-[#181c21] shadow-sm font-bold'
+              ? 'bg-white text-[#181c21] shadow-xs font-bold'
               : 'text-[#5d5e61] hover:text-[#181c21]'
           }`}
           onClick={() => {
@@ -52,9 +52,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
           زبون (Client)
         </button>
         <button
-          className={`role-pill flex-1 py-1.5 rounded-full font-semibold text-[13px] transition-all text-center ${
+          className={`role-pill flex-1 py-2 rounded-xl font-semibold text-[13px] transition-all text-center ${
             activeRole === 'driver'
-              ? 'bg-white text-[#181c21] shadow-sm font-bold'
+              ? 'bg-white text-[#181c21] shadow-xs font-bold'
               : 'text-[#5d5e61] hover:text-[#181c21]'
           }`}
           onClick={() => {
@@ -66,9 +66,9 @@ export const HomeView: React.FC<HomeViewProps> = ({
           سائق (Chauffeur)
         </button>
         <button
-          className={`role-pill flex-1 py-1.5 rounded-full font-semibold text-[13px] transition-all text-center ${
+          className={`role-pill flex-1 py-2 rounded-xl font-semibold text-[13px] transition-all text-center ${
             activeRole === 'admin'
-              ? 'bg-white text-[#181c21] shadow-sm font-bold'
+              ? 'bg-white text-[#181c21] shadow-xs font-bold'
               : 'text-[#5d5e61] hover:text-[#181c21]'
           }`}
           onClick={() => {
@@ -86,18 +86,18 @@ export const HomeView: React.FC<HomeViewProps> = ({
         <div className="absolute -top-12 -left-12 w-48 h-48 rounded-full bg-[#ffc700]/15 blur-2xl pointer-events-none"></div>
         <div className="absolute -bottom-8 -right-8 w-36 h-36 rounded-full bg-[#58e7ab]/20 blur-xl pointer-events-none"></div>
 
-        {/* Top Moroccan Network Badge + WhatsApp Button (0649600070 - number hidden, icon only) */}
+        {/* Top Moroccan Network Badge + Direct WhatsApp Button (0649600070 - number hidden, icon only) */}
         <div className="flex items-center gap-2 z-10">
           <a
             href="https://wa.me/212649600070"
             target="_blank"
             rel="noopener noreferrer"
-            title="تواصل معنا عبر واتساب"
+            title="تواصل مباشر عبر واتساب"
             aria-label="واتساب"
-            className="w-8 h-8 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center shadow-sm active:scale-95 transition-transform shrink-0"
+            className="w-9 h-9 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center justify-center shadow-md active:scale-95 transition-transform shrink-0"
           >
             <svg
-              className="w-4.5 h-4.5 fill-current"
+              className="w-5 h-5 fill-current"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -184,7 +184,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       </section>
 
       {/* Direct Tracking Input Field */}
-      <section className="w-full bg-white p-4 rounded-xl shadow-sm border border-[#e5e8ef] flex flex-col gap-2.5">
+      <section className="w-full bg-white p-4 rounded-2xl shadow-sm border border-[#e5e8ef] flex flex-col gap-2.5">
         <div className="flex items-center justify-between">
           <label
             htmlFor="tracking-num"
@@ -207,7 +207,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
               value={trackingInput}
               onChange={(e) => setTrackingInput(e.target.value)}
               placeholder="TRK-MA-2026-000001"
-              className="w-full h-12 pr-10 pl-3 bg-[#f1f4fa] text-[#181c21] placeholder:text-[#81765f] font-mono text-[14px] font-bold rounded-xl focus:outline-none focus:bg-white focus:ring-2 focus:ring-[#ffc700] transition-all"
+              className="w-full h-12 pr-10 pl-3 bg-[#f1f4fa] text-[#181c21] placeholder:text-[#81765f] font-mono text-[14px] font-bold rounded-xl focus:outline-none focus:bg-white focus:ring-2 focus:ring-[#ffc700] transition-all border border-[#e5e8ef]"
             />
             <span className="material-symbols-outlined absolute right-3 top-3 text-[#5d5e61] pointer-events-none text-[20px]">
               barcode
@@ -216,7 +216,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
           <button
             type="submit"
-            className="h-12 px-5 bg-[#181c21] hover:bg-black text-white font-bold text-[14px] rounded-xl flex items-center justify-center gap-1 active:scale-95 transition-transform shrink-0"
+            className="h-12 px-5 bg-[#181c21] hover:bg-black text-white font-bold text-[14px] rounded-xl flex items-center justify-center gap-1 active:scale-95 transition-transform shrink-0 shadow-sm"
           >
             <span>بحث</span>
             <span className="material-symbols-outlined text-[18px]">arrow_back</span>
@@ -227,7 +227,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
       {/* Live Active Shipment Card (شحنة فطريقها دابا) */}
       <section
         id="live-active-shipment"
-        className={`w-full bg-white p-4 rounded-xl shadow-md border border-[#e5e8ef] flex flex-col gap-3.5 transition-all duration-300 ${
+        className={`w-full bg-white p-4 rounded-2xl shadow-md border border-[#e5e8ef] flex flex-col gap-3.5 transition-all duration-300 ${
           isHighlighted ? 'ring-4 ring-[#ffc700] scale-[1.01]' : ''
         }`}
       >
@@ -259,7 +259,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 <p className="text-[11px] text-[#5d5e61]">منين تحركات (الإنطلاق)</p>
                 <p className="text-[14px] font-bold text-[#181c21]">الدار البيضاء (عين السبع)</p>
               </div>
-              <span className="text-[12px] font-semibold text-[#5d5e61] bg-[#f1f4fa] px-2 py-0.5 rounded">
+              <span className="text-[12px] font-semibold text-[#5d5e61] bg-[#f1f4fa] px-2 py-0.5 rounded border border-[#e5e8ef]">
                 08:30 صباحاً
               </span>
             </div>
@@ -269,7 +269,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
                 <p className="text-[11px] text-[#5d5e61]">فين غادية توصل (الوجهة)</p>
                 <p className="text-[14px] font-bold text-[#181c21]">طنجة (ميناء طنجة المتوسط)</p>
               </div>
-              <span className="text-[12px] font-bold text-[#765b00] bg-[#ffc700]/25 px-2 py-0.5 rounded">
+              <span className="text-[12px] font-bold text-[#765b00] bg-[#ffc700]/25 px-2 py-0.5 rounded border border-[#ffc700]/30">
                 14:15 متوقعة
               </span>
             </div>
@@ -277,7 +277,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
 
         {/* Progress & ETA Indicator */}
-        <div className="flex flex-col gap-1.5 bg-[#f1f4fa] p-3 rounded-xl">
+        <div className="flex flex-col gap-1.5 bg-[#f1f4fa] p-3 rounded-xl border border-[#e5e8ef]">
           <div className="flex items-center justify-between text-[12px]">
             <span className="text-[#181c21] font-semibold">باقي تقريباً 120 كلم (ساعة و 40 دقيقة)</span>
             <span className="text-[#006c49] font-black">68% واصل</span>
@@ -290,16 +290,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
           </div>
         </div>
 
-        {/* Driver Info & Action Row */}
+        {/* Driver Info & Action Row with AI Avatar */}
         <div className="flex items-center justify-between pt-1">
           <div className="flex items-center gap-3">
             <img
               src={ASSETS.driverBoushaib}
-              alt="السي بوشعيب الشاوي"
+              alt="السي بوشعيب"
               className="w-11 h-11 rounded-full object-cover shadow-sm border border-[#e0e2e9]"
-              onError={(e) => {
-                e.currentTarget.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop';
-              }}
             />
             <div className="flex flex-col">
               <p className="text-[14px] font-bold text-[#181c21] leading-tight">السي بوشعيب</p>
@@ -308,13 +305,13 @@ export const HomeView: React.FC<HomeViewProps> = ({
           </div>
 
           <div className="flex items-center gap-2">
-            <a
-              href="tel:0661223344"
-              className="w-10 h-10 rounded-full bg-[#ebeef5] hover:bg-[#e0e2e9] flex items-center justify-center text-[#181c21] active:scale-90 transition-all"
+            <button
+              onClick={() => onShowToast('تواصل مع السائق عبر تطبيق NEXT GEN 📞')}
+              className="w-10 h-10 rounded-full bg-[#ebeef5] hover:bg-[#e0e2e9] flex items-center justify-center text-[#181c21] active:scale-90 transition-all border border-[#e0e2e9]"
               aria-label="اتصال بالسائق"
             >
               <span className="material-symbols-outlined text-[20px]">call</span>
-            </a>
+            </button>
 
             <button
               onClick={() => onNavigate('al-tatabbu', 'TRK-MA-2026-000001')}
@@ -330,7 +327,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
 
       {/* Statistics Summary Row */}
       <section className="grid grid-cols-3 gap-2.5 w-full">
-        <div className="bg-white p-3 rounded-xl shadow-xs border border-[#e5e8ef] flex flex-col items-center text-center gap-1">
+        <div className="bg-white p-3 rounded-2xl shadow-xs border border-[#e5e8ef] flex flex-col items-center text-center gap-1">
           <div className="w-8 h-8 rounded-full bg-[#ffc700] flex items-center justify-center text-[#181c21]">
             <span className="material-symbols-outlined text-[18px]">domain</span>
           </div>
@@ -338,7 +335,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <span className="text-[11px] text-[#5d5e61] font-medium">مدينة مغطية</span>
         </div>
 
-        <div className="bg-white p-3 rounded-xl shadow-xs border border-[#e5e8ef] flex flex-col items-center text-center gap-1">
+        <div className="bg-white p-3 rounded-2xl shadow-xs border border-[#e5e8ef] flex flex-col items-center text-center gap-1">
           <div className="w-8 h-8 rounded-full bg-[#58e7ab]/30 flex items-center justify-center text-[#006c49]">
             <span className="material-symbols-outlined text-[18px]">inventory_2</span>
           </div>
@@ -346,7 +343,7 @@ export const HomeView: React.FC<HomeViewProps> = ({
           <span className="text-[11px] text-[#5d5e61] font-medium">سلعة موصلة</span>
         </div>
 
-        <div className="bg-white p-3 rounded-xl shadow-xs border border-[#e5e8ef] flex flex-col items-center text-center gap-1">
+        <div className="bg-white p-3 rounded-2xl shadow-xs border border-[#e5e8ef] flex flex-col items-center text-center gap-1">
           <div className="w-8 h-8 rounded-full bg-[#e2e2e5] flex items-center justify-center text-[#454749]">
             <span className="material-symbols-outlined text-[18px]">verified_user</span>
           </div>
@@ -355,13 +352,11 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
-      {/* Logistics Visual Highlight Banner (Moroccan Highways & Hubs) */}
-      <section className="relative w-full h-40 rounded-2xl overflow-hidden shadow-sm border border-[#e5e8ef] flex flex-col justify-end p-4 group">
-        <div
-          className="absolute inset-0 bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-700"
-          style={{ backgroundImage: `url('${ASSETS.truckHighway}')` }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#111315]/90 via-[#111315]/40 to-transparent"></div>
+      {/* Logistics Visual Highlight Banner (NG Branded Luxury Theme) */}
+      <section className="relative w-full h-36 rounded-2xl overflow-hidden shadow-sm border border-[#e5e8ef] flex flex-col justify-end p-4 bg-[#111315]">
+        <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+          <span className="font-black text-[120px] text-[#ffc700]">NG</span>
+        </div>
 
         <div className="relative z-10 flex items-center justify-between">
           <div className="flex flex-col">
@@ -376,22 +371,17 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </section>
 
-      {/* Moroccan Logistics Pro Tip Card (نصائح السلعة) */}
-      <section className="w-full bg-[#f1f4fa] p-4 rounded-xl border border-[#e0e2e9] flex flex-col gap-2.5">
+      {/* Moroccan Logistics Pro Tip Card (NG Branded) */}
+      <section className="w-full bg-[#f1f4fa] p-4 rounded-2xl border border-[#e0e2e9] flex flex-col gap-2.5">
         <div className="flex items-center gap-2 text-[#765b00]">
           <span className="material-symbols-outlined text-[22px]">lightbulb</span>
           <h3 className="font-bold text-[15px] text-[#181c21]">نصيحة دالصالون للمرسل الذكي</h3>
         </div>
 
         <div className="flex items-start gap-3">
-          <img
-            src={ASSETS.warehouseBoxes}
-            alt="طريقة تغليف السلعة"
-            className="w-18 h-18 rounded-lg object-cover shadow-sm shrink-0 border border-white"
-            onError={(e) => {
-              e.currentTarget.src = 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=120&auto=format&fit=crop';
-            }}
-          />
+          <div className="w-16 h-16 rounded-xl bg-[#111315] text-[#ffc700] border-2 border-[#ffc700] flex items-center justify-center font-black text-lg shrink-0 select-none shadow-sm">
+            NG
+          </div>
           <div className="flex flex-col gap-1 min-w-0">
             <h4 className="text-[13px] font-bold text-[#181c21]">
               كيفاش تصور السلعة بطريقة صحيحة قبل ما تصيفطها؟

@@ -59,10 +59,10 @@ export const DriverTasksView: React.FC<DriverTasksViewProps> = ({
             <div className="relative">
               <img
                 src={ASSETS.driverYounes}
-                alt="يونس المرابط"
+                alt="يونس"
                 className="w-14 h-14 rounded-full object-cover shadow-xs border border-[#e0e2e9]"
                 onError={(e) => {
-                  e.currentTarget.src = 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop';
+                  e.currentTarget.src = ASSETS.driverBoushaib;
                 }}
               />
               <span
@@ -242,23 +242,24 @@ export const DriverTasksView: React.FC<DriverTasksViewProps> = ({
             {/* Client & Contact Container */}
             <div className="flex items-center justify-between bg-[#f1f4fa] p-3 rounded-xl">
               <div className="flex items-center gap-2.5">
-                <div className="w-10 h-10 rounded-full bg-[#e2e2e5] flex items-center justify-center text-[#181c21]">
-                  <span className="material-symbols-outlined text-[20px]">person</span>
+                <div className="w-10 h-10 rounded-full bg-[#111315] text-[#ffc700] flex items-center justify-center font-bold text-xs">
+                  NG
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[13px] text-[#181c21] font-bold">عثمان</span>
                   <span className="text-[12px] text-[#5d5e61] font-mono" dir="ltr">
-                    0662-889911
+                    06xxxxxxxx
                   </span>
                 </div>
               </div>
-              <a
-                href="tel:0662889911"
+              <button
+                type="button"
+                onClick={() => onShowToast('جاري الاتصال بالزبون عثمان (06xxxxxxxx) 📞')}
                 className="h-11 px-4 bg-[#181c21] hover:bg-black text-white rounded-xl flex items-center justify-center gap-1.5 active:scale-95 transition-all shadow-xs"
               >
                 <span className="material-symbols-outlined text-[18px]">call</span>
                 <span className="text-[13px] font-bold">عيط للزبون</span>
-              </a>
+              </button>
             </div>
 
             {/* Location & Live Route Preview */}

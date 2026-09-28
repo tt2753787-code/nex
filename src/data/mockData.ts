@@ -1,4 +1,4 @@
-import { ASSETS } from './assets.ts';
+import { ASSETS, AI_AVATARS } from './assets.ts';
 import { Shipment, DriverInfo, NotificationItem } from './types.ts';
 
 export const MOROCCAN_CITIES = [
@@ -14,40 +14,40 @@ export const MOROCCAN_CITIES = [
   { name: 'الداخلة (Dakhla)', code: 'VIL', lat: 23.6848, lng: -15.9570 },
 ];
 
-// Drivers with ONLY first names (حذف النسب والاحتفاظ فقط بالاسم الشخصي)
+// Drivers with first names and masked 06xxxxxxxx phones
 export const INITIAL_DRIVERS: DriverInfo[] = [
   {
     id: 'drv-1',
     name: 'يونس',
-    phone: '0600000000',
+    phone: '06xxxxxxxx',
     truckModel: 'مرسيدس أكتروس 14 طن',
     matricule: '48-أ-12940',
-    avatar: ASSETS.driverYounes,
+    avatar: AI_AVATARS.driverYounes,
     isOnline: true,
     activeShipmentId: 'TRK-MA-2026-000482',
   },
   {
     id: 'drv-2',
     name: 'السي بوشعيب',
-    phone: '0661223344',
+    phone: '06xxxxxxxx',
     truckModel: 'شاحنة رونو 14 طن',
     matricule: '26-أ-88310',
-    avatar: ASSETS.driverBoushaib,
+    avatar: AI_AVATARS.driverBoushaib,
     isOnline: true,
     activeShipmentId: 'TRK-MA-2026-000001',
   },
   {
     id: 'drv-3',
     name: 'كريم',
-    phone: '0663445566',
+    phone: '06xxxxxxxx',
     truckModel: 'فولفو FH 24 طن',
     matricule: '1-ب-55421',
-    avatar: ASSETS.profile,
+    avatar: AI_AVATARS.ngProfile,
     isOnline: true,
   },
 ];
 
-// Shipments with only first names for sender, recipient, and driver
+// Shipments with masked phones 06xxxxxxxx and NG placeholder graphics
 export const INITIAL_SHIPMENTS: Shipment[] = [
   {
     id: 'ship-1',
@@ -55,13 +55,13 @@ export const INITIAL_SHIPMENTS: Shipment[] = [
     status: 'in_transit',
     statusLabel: 'السلعة فطريقها',
     senderName: 'ياسين',
-    senderPhone: '0661000089',
+    senderPhone: '06xxxxxxxx',
     originCity: 'الدار البيضاء',
     originAddress: 'سيدي معروف، المنطقة الصناعية، زنقة 14',
     destinationCity: 'طنجة',
     destinationAddress: 'شارع مولاي يوسف، عمارة 14 (قرب صيدلية البوغاز)',
     recipientName: 'عثمان',
-    recipientPhone: '0662-889911',
+    recipientPhone: '06xxxxxxxx',
     goodsType: '4 كراطن مواد نسيج',
     packagesCount: 4,
     weightKg: 140,
@@ -146,13 +146,13 @@ export const INITIAL_SHIPMENTS: Shipment[] = [
     status: 'in_transit',
     statusLabel: 'شحنة فطريقها دابا',
     senderName: 'رشيد',
-    senderPhone: '0670112233',
+    senderPhone: '06xxxxxxxx',
     originCity: 'الدار البيضاء',
     originAddress: 'عين السبع، الحي الصناعي',
     destinationCity: 'طنجة',
     destinationAddress: 'ميناء طنجة المتوسط',
     recipientName: 'كريم',
-    recipientPhone: '0661998877',
+    recipientPhone: '06xxxxxxxx',
     goodsType: 'قطع غيار ومعدات إلكترونية',
     packagesCount: 12,
     weightKg: 85,
@@ -211,13 +211,13 @@ export const INITIAL_SHIPMENTS: Shipment[] = [
     status: 'delivered',
     statusLabel: 'تم التوصيل بنجاح',
     senderName: 'مريم',
-    senderPhone: '0655443322',
+    senderPhone: '06xxxxxxxx',
     originCity: 'مراكش',
     originAddress: 'حي جيليز، مراكش',
     destinationCity: 'الدار البيضاء',
     destinationAddress: 'المعاريف، زنقة الزرقطوني',
     recipientName: 'خالد',
-    recipientPhone: '0663112244',
+    recipientPhone: '06xxxxxxxx',
     goodsType: 'منتجات تقليدية وزيوت طبيعية',
     packagesCount: 3,
     weightKg: 45,

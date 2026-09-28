@@ -190,6 +190,7 @@ export default function App() {
           <CreateOrderView
             onCreateOrder={handleCreateOrder}
             onShowToast={showToast}
+            onNavigateToTracking={(trk) => handleNavigate('al-tatabbu', trk)}
           />
         )}
 
