@@ -1,0 +1,6 @@
+{
+  "name": "NEXT GEN Logistics Maroc",
+  "description": "منصة النقل واللوجستيك الذكية بالمغرب - تتبع الشحنات، طلبات النقل، وإدارة الأسطول المباشرة",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
